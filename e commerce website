@@ -1,0 +1,60 @@
+An e-commerce website wishes to analyze the pre-day sales of their products. The products are tagged from a to z and A to Z. The daily sales are merged into a sequence of the tags of the products sold in the day. The company wishes to identify the products that are purchased only one time in the day. Write an algorithm to find the count of the product tags that occur only once in the sales sequence.
+
+Input Format
+
+The input consists of a string salessequence, representing the sales of the day.
+
+Constraints
+
+string Note: The input string salessequence is case sensitive. Uppercase characters and lowercase characters are counted as different.
+
+Output Format
+
+Print an integer representing the count of the product tags that occur only once in the sales sequence.
+
+Sample Input 0
+
+alphaadida
+Sample Output 0
+
+4
+Explanation 0
+
+The products tags that occurred once in the sales sequence are l,p,h,i. So the output is 4.
+
+Sample Input 1
+
+PropErformer
+Sample Output 1
+
+6
+===============================================================================
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+     char str[100];
+    scanf("%[^\n]s",str);
+    int n,i,j,c1=0;
+    n=strlen(str);
+    for(i=0;i<n;i++){
+        int c=0;
+        for(j=0;j<n;j++){
+            if(str[i]==str[j]){
+                c++;
+            }
+        }
+        if(c==1){
+            c1++;
+        }
+        
+    }
+    
+    printf("%d",c1);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
