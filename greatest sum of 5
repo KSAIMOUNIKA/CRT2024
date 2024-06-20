@@ -1,0 +1,75 @@
+Write a program to find the sum of elements in each row and column and also to find the greatest sum in rows and columns.
+
+Input Format
+
+Read size of rows and columns Read elements for matrix
+
+Constraints
+
+1<=n<10^7
+
+Output Format
+
+Print sum of rows in first line Print highest row no in next line Print sum of columns in next line Print highest column no in next line
+
+Sample Input 0
+
+3
+3
+1 6 8
+2 5 1
+3 8 2
+Sample Output 0
+
+15 8 13
+Row 1
+6 19 11
+Column 2
+
+===============================================================================
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+     int m,n;
+    scanf("%d%d",&m,&n);
+    int a[m][n],i,j,s,r=0,c=0,max;
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<m;i++)
+        {
+            s=0;
+            for(j=0;j<n;j++)
+            {
+                s=s+a[i][j];
+            }
+        printf("%d ",s);
+        if(s>r){
+        r=s;
+        max=i+1;
+        }
+        }
+    printf("\nRow %d\n",max);
+    
+    for(j=0;j<n;j++)
+        {
+            s=0;
+    for(i=0;i<m;i++)
+        {
+                s=s+a[i][j];
+            }
+        printf("%d ",s);
+        if(s>c){
+        c=s;
+        max=j+1;
+        }
+        }
+    printf("\nColumn %d",max);
+    return 0;
+
+}
