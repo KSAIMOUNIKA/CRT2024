@@ -1,0 +1,101 @@
+Write a program to insert an element in an array at the given position. If the position where the element is to be inserted is greater than the size of the array display “Invalid Input”.
+
+Input Format
+
+The first integer corresponds to the size of the array. Read n elements into an array line by line Next integer corresponds to the position where the element is to be inserted. Next integer corresponds to the element to be inserted.
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print array after insertion
+
+Sample Input 0
+
+5
+1
+2
+3
+4
+5
+4
+10
+Sample Output 0
+
+1
+2
+3
+10
+4
+5
+Sample Input 1
+
+4
+12
+55
+24
+65
+8
+22
+Sample Output 1
+
+Invalid Input
+Sample Input 2
+
+6
+23
+55
+12
+87
+44
+22
+3
+99
+Sample Output 2
+
+23
+55
+99
+12
+87
+44
+22
+
+===============================================================================
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+ int n;
+    scanf("%d",&n);
+    int a[n],i;
+    for(i=1;i<=n;i++){
+        scanf("%d",&a[i]);
+    }
+    int p,e;
+    scanf("%d%d",&p,&e);
+    if(p>n){
+        printf("Invalid Input");
+        return 0;
+    }
+    else{
+        n=n+1;
+        for(i=n;i>p;i--){
+            a[i]=a[i-1];
+        }
+        if(i==p){
+            a[i]=e;
+        }
+        
+    }    
+    for(i=1;i<=n;i++){
+        printf("%d\n",a[i]);
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
