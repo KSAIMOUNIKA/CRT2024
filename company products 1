@@ -1,0 +1,58 @@
+A company has to tag its products. Each product has an associated product type which is used to tag the products. Product type is a sequence of lower-case letters from the English alphabet. The company want to have an algorithm for their system which takes the product type and outputs the tag. To generate the tag, pairs of adjacent characters are formed from the start of the uct type . From each pair the lexicographically smallest character will be removed. If a character will be left unpaired then that character will be taken as it is in the tag. Write an algorithm for the company system to find the tag for the given product.
+
+Input Format
+
+The input consists of a string productType. representing the product type of the product.
+
+Constraints
+
+string
+
+Output Format
+
+Print a string representing the tag for the given product
+
+Sample Input 0
+
+electronics
+Sample Output 0
+
+letois
+Sample Input 1
+
+language
+Sample Output 1
+
+lnug
+
+========================================================================================
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+char str[100],str1[100];
+    scanf("%[^\n]s",str);
+    int j;
+    int n=strlen(str);
+    for(int i=0;i<n;i++){
+       if(str[i]>str[i+1]){
+           str1[j]=str[i];
+           j++;
+           i++;
+       }
+        else{
+            str1[j]=str[i+1];
+            j++;
+            i++;
+        }
+    }
+    str1[j]='\0';
+    printf("%s",str1);
+    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
+  
