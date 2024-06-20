@@ -1,0 +1,48 @@
+Write a program to change the given string to uppercase.
+
+Input Format
+
+Input consists of 1 string.
+
+Constraints
+
+string
+
+Output Format
+
+Output print the Uppercase of given string.
+
+Sample Input 0
+
+good
+Sample Output 0
+
+GOOD
+Sample Input 1
+
+Java Language
+Sample Output 1
+
+JAVA LANGUAGE
+========================================================================
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   char str[50];
+    scanf("%[^\n]s",str);
+    int i;
+    int n=strlen(str);
+    for(i=0;i<n;i++){
+        if(str[i]>=97 && str[i]<122){
+          str[i]=str[i]-32;
+        }
+    
+    }
+    printf("%s",str);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
