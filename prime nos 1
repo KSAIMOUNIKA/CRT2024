@@ -1,0 +1,54 @@
+Write a program to display all the Prime Numbers between a given range of numbers.
+
+Input Format
+
+Line 1: Line 2:
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Sample Input 0
+
+25
+50
+Sample Output 0
+
+29 31 37 41 43 47
+Sample Input 1
+
+100
+200
+Sample Output 1
+
+101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199
+==============================================================================
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+int n1,n2,cnt;
+    scanf("%d%d",&n1,&n2);
+    while(n1<n2)
+    {
+       cnt=0;
+     for(int i=1;i<=n1;i++)
+            {
+            if(n1%i==0)
+            {
+                     cnt++;
+             }
+        }
+    if(cnt==2){
+        printf("%d ",n1);
+       }
+       n1++;
+    }
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
