@@ -32,5 +32,39 @@ Sample Output 1
 21
 
 ===============================================================================
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+int n,p;
+    scanf("%d%d",&n,&p);
+    int a[n],i,j,t;
+    for(i=0;i<n;i++)
+    {
+    scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+        if(a[i]>a[j])
+        {
+            t=a[i];
+            a[i]=a[j];
+            a[j]=t;
+        }
+        }   
+        if(i==p-1)
+        {
+            printf("%d",a[i]);
+            break;
+        }
+    }
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
 
   
